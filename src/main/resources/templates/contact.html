@@ -1,0 +1,52 @@
+
+  <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Page</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card-header card bg-secondary text-white">
+        <h2>Contact page</h2>
+    </div>
+    <form>
+        <label><b>• Method = Post</b></label>
+        <input type="text" class="form-control" placeholder="Enter method" required/>
+
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>PhoneNum</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    </thead>
+                    <tbody>
+                    <tr th:each="contact : ${contactDtoList}">
+                        <td th:text="${contact.phoneNum}"td>
+                        <td th:text="${contact.email}"></td>
+                        <td th:text="${contact.address}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+    </form>
+</div>
+<footer th:insert="fragments/footer :: footer_fragment"></footer>
+
+</body>
+</html>
