@@ -43,18 +43,14 @@ public class HomeController {
         contactDtoList.add(contactDto2);
 
     }
-
-
     @GetMapping("/contactList")
     public String getAllContacts(Model model) {
         List<ContactDto> contactDtoList = new ArrayList<>();
         model.addAttribute("contactDtoList", contactDtoList);
         return "contact";
     }
-
     @GetMapping("/about")
     public String about() {
-
         return "about";
     }
 }
