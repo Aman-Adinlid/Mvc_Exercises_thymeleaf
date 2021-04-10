@@ -1,27 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Index Page</title>
+    <title>About page</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    <style>
-
-        body {
-            padding-top: 70px;
-        }
-    </style>
 </head>
 <body>
 <nav th:insert="fragments/navbar ::navbar_fragment"></nav>
-<div class="container bg-secondary">
-    <h1>Index page</h1>
-    <p>welcome to my index page</p>
-</div>
-
-<footer th:insert="fragments/footer :: footer_fragment"></footer>
 
 </body>
 </html>

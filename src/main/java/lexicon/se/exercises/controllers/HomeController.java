@@ -5,12 +5,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class HomeController {
+    List<ContactDto> contactDtoList = new ArrayList<>();
+
+    @PostConstruct
+    public void text() {
+        contactDtoList = new ArrayList<>();
+    }
+
     @GetMapping("/")
     public String index() {
 
@@ -18,37 +27,20 @@ public class HomeController {
 
     }
 
-    @GetMapping("/contact")
-    public String contact() {
 
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        ContactDto dto = new ContactDto();
+        model.addAttribute("dto", dto);
         return "contact";
     }
 
-
-    @PostMapping("/contact")
-    public void init() {
-        List<ContactDto> contactDtoList = new ArrayList<>();
-
-        if (contactDtoList == null) contactDtoList = new ArrayList<>();
-        ContactDto contactDto = new ContactDto();
-        contactDto.setPhoneNum(0765455);
-        contactDto.setEmail("12pinkpanda@gmali.com");
-        contactDto.setAddress("Sweden");
-
-        ContactDto contactDto2 = new ContactDto();
-        contactDto2.setPhoneNum(07654432);
-        contactDto2.setEmail("17pinkpanda@gmali.com");
-        contactDto2.setAddress("Germany");
-        contactDtoList.add(contactDto);
-        contactDtoList.add(contactDto2);
-
-    }
     @GetMapping("/contactList")
-    public String getAllContacts(Model model) {
-        List<ContactDto> contactDtoList = new ArrayList<>();
+    public String contactList(Model model) {
         model.addAttribute("contactDtoList", contactDtoList);
         return "contact";
     }
+
     @GetMapping("/about")
     public String about() {
         return "about";
