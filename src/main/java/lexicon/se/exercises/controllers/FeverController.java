@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FeverController {
     @GetMapping("/fever")
-    public String fever(Model model){
+    public String fever(Model model) {
         Temperature temperature = new Temperature();
-        model.addAttribute("temperature",temperature);
+        model.addAttribute("temperature", temperature);
         return "fever";
     }
 }
