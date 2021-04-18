@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fever Page</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<nav th:insert="fragments/navbar ::navbar_fragment"></nav>
+
+<div class="bg-white">
+    <form th:action="@{/fever}" method="post" th:object="${temperature}">
+        <div class="form-group">
+            <label>Whats your body Temperature?</label>
+            <select class="form-control">
+                <option value=""></option>
+                <option th:value="${temperature.fever}">Fever</option>
+                <option th:value="${temperature.normal}">Normal</option>
+                <option th:value="${temperature.hyperthermia}">Hyperthermia</option>
+            </select>
+        </div>
+    </form>
+</div>
+<button type="submit" class="btn btn-success">Submit</button>
+
+<nav th:insert="fragments/navbar ::navbar_fragment"></nav>
+</body>
+</html>
