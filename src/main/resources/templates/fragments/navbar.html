@@ -17,12 +17,11 @@
     </style>
 
 </head>
-
 <body>
 
 <header>
-    <nav th:fragment="navbar_fragment" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="navbar-brand" href="#">Contact Information</a>
+    <nav th:fragment="navbar_fragment" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,7 +35,10 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/contact/}">Contact List</a>
+                    <a class="nav-link" th:href="@{/contact/}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about/}">About</a>
                 </li>
             </ul>
         </div>

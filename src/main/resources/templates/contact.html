@@ -18,8 +18,7 @@
 <nav th:insert="fragments/navbar ::navbar_fragment"></nav>
 
 <div class="bg-white">
-    <form th:action="@{/contact}" method="post" th:object="${dto}" class="was-validated"
-          style="padding: 20px;margin: 10px">
+    <form th:action="@{/contact}" method="post" th:object="${dto}" class="was-validated">
         <div class="form-group">
             <label for="test">PhoneNum:</label>
             <input type="text" class="form-control" th:field="*{phoneNum}" id="test" name="phoneNum"
@@ -40,8 +39,6 @@
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 </div>
-
-
 </form>
 </div>
 
